@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-5d2&3i00zngtvu_-b0pg8)7zoxbabag2o+#rkj^uz+g(ev4t*c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://zeewind.onrender.com"]  # Allow all hosts for development
+ALLOWED_HOSTS = ["zeewind.onrender.com", "localhost", "127.0.0.1"]  # Allow all hosts for development
 
 # Application definition
 
@@ -80,7 +80,8 @@ WSGI_APPLICATION = 'fancompany.wsgi.application'
 
 import dj_database_url
 
-DATABASES = { 'default': dj_database_url.config(
+DATABASES = { 
+    'default': dj_database_url.config(
      default='postgres://localhost'
        )
  }
