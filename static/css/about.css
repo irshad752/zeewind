@@ -1,0 +1,87 @@
+/* About Page Styles */
+.about-page {
+  background: url("../images/about-bg.png") no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+/* Hero Banner */
+.about-banner {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+.about-banner h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.about-banner p {
+  font-size: 18px;
+}
+
+/* Sections */
+.about-section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.about-section h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #007bff;
+}
+
+.about-section p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Highlight Offer */
+.highlight-offer {
+  background: #f1f9ff;
+  border-left: 6px solid #007bff;
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 900px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.highlight-offer h2 {
+  font-size: 30px;
+  margin-bottom: 15px;
+  color: #007bff;
+}
+
+.highlight-offer p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* List Styling */
+.about-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-section ul li {
+  margin: 10px 0;
+  font-size: 16px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.about-section ul li::before {
+  content: "✔";
+  color: #007bff;
+  position: absolute;
+  left: 0;
+}

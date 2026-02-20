@@ -1,0 +1,273 @@
+/* product.css */
+
+/* Product Page Background */
+.product-page-body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(-45deg, #d4fc79, #96e6a1, #a1c4fd, #c2e9fb);
+  min-height: 100vh;
+  background-size: 400% 400%;
+  margin: 0;
+  padding: 0;
+  animation: gradientShift 15s ease infinite, fadeBody 1s ease-in;
+  text-align: center;
+}
+
+@keyframes gradientShift { 
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; } 
+}
+@keyframes fadeBody {
+   from { opacity: 0; }
+    to { opacity: 1; } 
+  }
+
+/* Product Rows */
+.product-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+}
+
+/* Product Cards */
+.product-card {
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 25px;
+  width: 260px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: translateX(-50px);
+  animation: slideIn 1s ease forwards;
+}
+/* Staggered delays for each card */
+.product-card:nth-child(1) { animation-delay: 0.1s; }
+.product-card:nth-child(2) { animation-delay: 0.2s; }
+.product-card:nth-child(3) { animation-delay: 0.3s; }
+.product-card:nth-child(4) { animation-delay: 0.4s; }
+/* Add more nth-child rules if you have more cards */
+
+@keyframes slideIn {
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.product-card img {
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  }
+
+.product-card .product-img {
+  transition: transform 0.5s ease;
+}
+.product-card:hover .product-img {
+  transform: scale(1.40);
+}
+.product-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px 0;
+  color: #222;
+}
+.product-card p {
+  font-size: 15px;
+  color: #666;
+  margin: 5px 0;
+}
+.product-card .price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #007bff;
+  margin: 10px 0;
+}
+.product-card .description {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 8px 0;
+  line-height: 1.5;
+}
+.product-card .status {
+  font-size: 13px;
+  color: red;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+button {
+  padding: 10px 18px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+button:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+.warranty {
+  font-size: 13px;
+  color: #007bff;
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+.reviews {
+  font-size: 14px;
+  color: #f39c12; /* gold stars */
+  margin-top: 6px;
+}
+
+.badges {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+.badges img {
+  height: 40px;
+}
+
+
+/* Filter Bar */
+.filter-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 18px;
+}
+.filter-bar select {
+  margin-left: 10px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 2px solid #000000;
+}
+
+/* Trust Footer */
+.trust-footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f8f9fa;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* quick model */
+
+.quick-view-modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.quick-view-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+.close {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Disable zoom when modal is open */
+body.modal-open .product-card:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+ 
+/* Prevent hover interaction behind modal */
+body.modal-open .product-card:hover img {
+  pointer-events: none;
+  transform: none !important;
+}
+/
+/* style h1 and animation sep form global */
+.product-page-body h1{
+  font-family: 'Montserrat',sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+  margin-bottom: 10px;
+  letter-spacing: 1;
+  opacity: 0;
+  animation: fadeInTitle 1.2s ease forwards;
+  }
+
+  /* style h2 and animation sep from global */
+  /*
+  .product-page-body h2{
+    font-family: 'Lato',sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #444;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+
+  .product-page-body h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+  }
+  .product-page-body h2:hover::after {
+    width: 100%;
+  }
+  @keyframes fadeInTitle {
+    from {
+      opacity: 0;
+      letter-spacing: 6px;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      letter-spacing: 1px;
+      transform: translateY(0);
+    }
+    
+  }
+  */

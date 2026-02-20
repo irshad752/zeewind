@@ -1,0 +1,183 @@
+@media (max-width: 480px) {
+  .contact-page {
+    padding: 20px;
+  }
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    font-size: 14px;
+  }
+}
+
+
+
+/*  contact.css - Styles for the Contact Page */
+
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+
+
+/* Contact Page Wrapper */
+.contact-page {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px;
+}
+
+/* Page Title */
+.contact-page h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  
+}
+
+
+.contact-page p {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #555;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  
+}
+.gst{
+  color: #D9534f;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+
+
+.contact-info h2 {
+    text-align: center;
+    font-size: 30px;
+}
+
+/* Sections */
+.contact-info, .contact-form, .social-links {
+  margin-bottom: 40px;
+}
+
+.contact-info h2, .contact-form h2, .social-links h2 {
+  margin-bottom: 15px;
+  color: #007bff;
+}
+
+/* Contact Form */
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input, 
+.contact-form select, 
+.contact-form textarea {
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+}
+
+/* Submit Button */
+.contact-form button {
+  padding: 14px;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.contact-form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, #0056b3, #0099cc);
+}
+
+/* Social Links */
+.social-links {
+  text-align: center;
+}
+
+.social-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #007bff;
+  font-size: 38px;
+  font-weight: bold;
+}
+
+.social-links a .fa-instagram{
+  color: #E1306C;
+}
+
+.social-links a:hover {
+  color: #0056b3;
+}
+
+.whatsapp-float {
+    animation: none !important;
+    transform: none !important;
+}
+
+/* FINAL OVERRIDE for WhatsApp Floating Button */
+/* FINAL WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px #999;
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* force stop any animation */
+  animation: none !important;
+  transform: none !important;
+}
+
+.whatsapp-float img {
+  width: 35px;
+  height: 35px;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover img {
+  transform: scale(1.2);
+}
+
+/* Trust Footer */
+.trust-footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f8f9fa;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin-top: 20px;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}

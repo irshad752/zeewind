@@ -1,0 +1,112 @@
+@media (max-width: 480px) {
+  .enquiry-form-page .enquiry-form {
+    width: 90%;
+    padding: 20px;
+  }
+  .enquiry-form-page {
+    background-attachment: scroll;
+    padding: 20px 0;
+  }
+}
+
+
+
+/* Styles for the enquiry form */
+
+/* Background setup */
+.enquiry-form-page {
+    background: url('/static/images/bg.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Floating animation */
+@keyframes float {
+    0%   { transform: translateY(0px) rotateX(0deg); }
+    50%  { transform: translateY(-20px) rotateX(2deg); }
+    100% { transform: translateY(0px) rotateX(0deg); }
+}
+
+/* Form card */
+ @keyframes float2 {  }
+.enquiry-form-page .enquiry-form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    width: 350px;
+    backdrop-filter: blur(10px);
+
+    /* 3D floating effect */
+   
+    transform-style: preserve-3d;
+    animation: float 6s ease-in-out infinite;
+}
+
+.enquiry-form-wrapper {
+     display: flex; 
+     flex-direction: column;
+      align-items: center;
+       justify-content: center;
+ }
+
+/* Title */
+.enquiry-form-page .form-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px; 
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Labels */
+.enquiry-form-page .enquiry-form label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    color: #444;
+}
+
+/* Inputs */
+.enquiry-form-page .enquiry-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+/* Neon glow on focus */
+.enquiry-form-page .enquiry-form input:focus {
+    border-color: #ff7e5f;
+    box-shadow: 0 0 12px rgba(255,126,95,0.8);
+    outline: none;
+}
+
+/* Button */
+.enquiry-form-page .enquiry-form button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Button hover effect */
+.enquiry-form-page .enquiry-form button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}

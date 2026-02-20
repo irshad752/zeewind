@@ -1,0 +1,261 @@
+/* --- Warranty container (used in register, pending, rejected) --- */
+/* Page background */
+.register-page {
+    background-image: url("../images/roomimg1.webp")!important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.warranty-container {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 50px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ffffff, #f9fbff, #eaf3ff);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15),
+                inset 0 2px 6px rgba(255,255,255,0.6);
+    font-family: "Segoe UI", sans-serif;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+   
+}
+
+.warranty-container:hover {
+    transform: translateY(-5px);
+}
+
+/* Heading */
+.warranty-container h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #004080;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Form fields */
+.warranty-container form input,
+.warranty-container form select,
+.warranty-container form textarea {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fafafa;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.05);
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.warranty-container form input:focus,
+.warranty-container form select:focus,
+.warranty-container form textarea:focus {
+    border-color: #004080;
+    box-shadow: 0 0 8px rgba(0,64,128,0.3);
+    outline: none;
+}
+
+/* Button */
+.warranty-container button {
+    background: linear-gradient(145deg, #004080, #0066cc);
+    color: #fff;
+    padding: 14px 22px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.warranty-container button:hover {
+    background: linear-gradient(145deg, #0066cc, #004080);
+    transform: scale(1.02);
+}
+
+.success-message {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+/* Page design for pending page only */
+.pending-page {
+    background: linear-gradient(135deg, #f9fbff, #ffffff, #eaf3ff);
+    font-family: "Segoe UI", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Center container */
+.status-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Card design */
+.status-card {
+    max-width: 600px;
+    padding: 40px;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #ffffff, #f4f8ff);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15),
+                inset 0 2px 6px rgba(255,255,255,0.7);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.status-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Icon */
+.status-icon {
+    font-size: 50px;
+    color: #004080;
+    margin-bottom: 20px;
+}
+
+/* Heading */
+.status-card h2 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #004080;
+    margin-bottom: 15px;
+}
+
+/* Message */
+.info-message {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.warranty-container h2 {
+    font-size: 22px;
+    color: #004080;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* --- Page Wrapper --- */
+.page-wrapper {
+    background: #f4f4f4;           /* off-white background */
+    display:inline-block;        
+    align-items: center;            
+    min-height: 100vh;              
+    padding: 20px;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* --- Certificate Wrapper --- */
+.certificate-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 850px;                   /* desired certificate width */
+    margin: 40px auto; 
+    box-sizing: border-box;      
+    display: block;
+        
+}
+
+/* --- Certificate Image --- */
+.certificate-bg {
+    width: 100%;
+    max-width: 850px;
+    height: auto ;                   /* maintain aspect ratio */               /* prevents vertical scroll */
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;           /* keeps proportions */
+}
+
+/* --- Overlay Text --- */
+.certificate-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Times New Roman", serif;
+    color: #000;
+}
+
+/* Customer Name (below title area) */
+.customer-name {
+    position: absolute;
+    top: 35%;                       /* adjust if needed for your certificate image */
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+    font-family: "Lucida Handwriting", cursive;
+    font-weight: bold;
+    
+}
+
+/* Product Details inside certificate blank space */
+.product-details {
+    position: absolute;
+    top: 53%;                       /* adjust for your certificate layout */
+    left: 45%;
+    width: 80%;
+    text-align: center; 
+    transform: translateX(-50%);      
+    font-size: 22px;
+    line-height: 1.6;
+    font-family: "Times New Roman", serif;
+    font-weight: 520;
+    white-space: nowrap;
+}
+.serial {
+    position: absolute;
+    top: 51px;                       /* adjust for your certificate layout */
+    left: 57%;
+    width: 80%;  
+    text-align: left; 
+    transform: translateX(-72%);  
+    font-size: 22px;
+    line-height: 1.6;
+    font-family: "Times New Roman", serif;
+    font-weight: 520;
+    white-space: nowrap;
+}
+
+
+/* Download Button (desktop default) */
+.download-btn-wrapper {
+    text-align: center;
+    margin-top: 25px;
+    display: block;
+}
+
+#download-btn {
+    background: #004080;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+#download-btn:hover {
+    background: #0066cc;
+}
