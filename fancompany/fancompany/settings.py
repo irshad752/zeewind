@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-5d2&3i00zngtvu_-b0pg8)7zoxbabag2o+#rkj^uz+g(ev4t*c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["zeewind.onrender.com", "localhost", "127.0.0.1"]  # Allow all hosts for development
 
@@ -125,9 +125,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [ 
-    BASE_DIR / "static"
+    BASE_DIR.parent / "static"
 ] # points to faan_website/static 
-STATIC_ROOT = BASE_DIR / "staticfiles" # where static files will be collected
+STATIC_ROOT = BASE_DIR.parent / "staticfiles" # where static files will be collected
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -135,4 +139,4 @@ STATIC_ROOT = BASE_DIR / "staticfiles" # where static files will be collected
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = BASE_DIR.parent / 'media'
