@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/warranty.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="status-container">
+    <div class="status-card warning-card">
+        <div class="status-icon">⚠️</div>
+        <h2>Sorry, no product found</h2>
+        <p class="warning-message">
+            There is no product with that serial number.<br>
+            Please fill the 
+            <a href="{% url 'register_warranty' %}">Warranty Registration Form</a> 
+            first, then wait for approval from customer support.
+        </p>
+    </div>
+</div>
+{% endblock %}

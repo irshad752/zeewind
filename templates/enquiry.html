@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %} 
+<link rel="stylesheet" href="{% static 'css/styyles.css' %}">
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+ {% endblock %}
+
+{% block content %}
+
+<div class="enquiry-form-page">
+    <div class="enquiry-form-wrapper">
+    <h2 class="form-title"> Product Enquiry Form</h2>
+    <form method="post"  class="enquiry-form">
+        {% csrf_token %}
+        <input type="hidden" name="product_id" value="{{ product.id }}">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="place">Place:</label>
+        <input type="text" id="place" name="place" required>
+
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" required>
+
+        <label for="color">Color:</label>
+        <input type="text" id="color" name="color" value="{{ color }}" readonly>
+
+        <button type="submit" value="Submit"> Send Enquiry </button>
+    </form>
+    </div>
+</div>
+{% endblock %}

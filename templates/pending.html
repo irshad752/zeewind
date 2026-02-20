@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/warranty.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="pending-page">
+<div class="status-container">
+    <div class="status-card">
+        <div class="status-icon">✔️</div>
+        <h2>Registration Received</h2>
+        <p class="info-message">
+            Thank you for registering your product.  
+            We are verifying your details, and this process will take less than 2 working days.
+        </p>
+    </div>
+</div>
+</div>
+{% endblock %}

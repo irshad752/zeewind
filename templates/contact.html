@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %} 
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="contact-page">
+    <h1>Contact Us</h1>
+    <p>We’d love to hear from you. Reach out anytime! <br>
+     Please reach out with any inquiries or feedback—we’re here to assist you</p>
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <h2>Our Office</h2>
+      <p> ZEEWIND ENTERPRISES <BR>Door No:5/455B POTTIPPARA,<BR> EDARIKODE (P.O), MALAPPURAM, KERALA , INDIA , 676501 </p>
+        <p> <span class="gst"> GSTIN : 32AACFZ9218P1ZL</span> </p>
+
+      <p> 
+        <strong>Customer Care:</strong><br>
+       📞 <a href="tel:+91 9037 607 044"> +91 9037 607 044 </a><br>
+       📞 <a href="tel:+91 8289 912 249"> +91 8289 912 249 </a></p>
+
+      <p >Email : <a href="mailto:zeewindekd@gmail.com"> ✉ zeewindekd@gmail.com</a></p>
+
+      <p >
+         <strong>Business Hours :</strong><br> 
+         Mon – Sat :  9:00 AM🕒 – 6:00  PM🕒</p>
+      <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.4885590447675!2d75.9849808!3d11.001923600000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7b34141efa52d%3A0xad5c58e3dc0010d2!2sZeewind%20Enterprises!5e0!3m2!1sen!2sin!4v1770535138496!5m2!1sen!2sin" 
+  width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+    </div>
+
+  
+    <!-- Social Links -->
+    <div class="social-links">
+      <h2>Connect With Us</h2>
+      <a href="https://www.facebook.com/share/1MkNUkut4w/" target="_blank"> <i class="fab fa-facebook"></i></a> | 
+      <a href="https://www.instagram.com/zeewindekd?igsh=MWs1OGd4NnVhbDRjaQ==" target="_blank"> <i class="fab fa-instagram"></i></a> 
+     
+    </div>
+    <footer class="trust-footer">
+  <div class="trust-item">🔒 Secure Payments</div>&nbsp;&nbsp;&nbsp;
+  <div class="trust-item">🚚 Fast Shipping</div>&nbsp;&nbsp;&nbsp;
+  <div class="trust-item">🛠️ 2-Year Warranty</div>&nbsp;&nbsp;&nbsp;
+  <div class="trust-item">📞 24/7 Support</div>
+</footer>
+</div>
+  <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/918289912249?text=Hello%20I%20would%20like%20to%20know%20more%20about%20your%20products"
+   class="whatsapp-float" target="_blank">
+   <img src="{% static 'images/whatsapp-icon.png' %}" alt="WhatsApp Chat">
+
+</a>
+
+{% endblock %}

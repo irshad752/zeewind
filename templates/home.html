@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+{% block content %}
+
+<!--video section -->
+<section class="hero hero-video"><br><br>
+    <video autoplay muted loop playsinline   class="background-video">
+        <source src="{% static 'videos/bldc.mp4' %}" type="video/mp4">
+        Your browser does not support the video.
+    </video>
+     <div class="hero-cool">
+       
+        <a href="/products/" class="hero-btn">Explore Products</a>
+      </div>
+    </section>
+
+ <!-- ceiling fan section -->
+    <section class="hero hero-right"
+               style="background-image: url('{% static 'images/ceiling-fan-bg.png' %}');">
+
+        <div class="hero-content">
+            <h2> CEILING FANS</h2>
+            <p>
+         Upgrade your home with the next generation of cooling technology. The
+         <strong>ZEEWIND BLDC Ceiling Fan  combines modern design with advanced brushless motor technology,
+           delivering powerful airflow while saving up to 60% energy compared to traditional fans.</strong>
+            </p>
+            <a href="/products/?category=Ceiling" class="hero-btn">Shop Now</a>
+        </div>
+    </section>
+
+    
+     <section class="hero hero-left"
+               style="background-image: url('{% static 'images/bbldc1.png' %}');">
+
+        <div class="hero-content">
+            <h2> Maarvel Smart  BLDC Ceiling Fan</h2>
+            <p><strong>Stylish design, powerful airflow, and up to 60% lower electricity bills – choose ZEEWIND BLDC Ceiling Fan.</strong>
+            </p>
+            <a href="/products/?category=Pedestal" class="hero-btn">Shop Now</a>
+        </div>
+    </section>
+
+    <section class="hero hero-left"
+               style="background-image: url('{% static 'images/bbldc2.png' %}');">
+
+        <div class="hero-content">
+            <h2> Maarvel Smart BLDC  Ceiling Fan </h2>
+            <p>Experience the future of cooling – <strong>ZEEWIND BLDC Fan with smart control, silent comfort, and unmatched energy savings. </strong>
+            </p>
+            <a href="/products/?category=Pedestal" class="hero-btn">Shop Now</a>
+        </div>
+    </section>
+
+
+<!-- BLDC info section with two images side by side -->
+<section class="hero hero-dual">
+  <div class="dual-container">
+    <div class="dual-left">
+      <img src="{% static 'images/fanabout.png' %}" alt="bldc  Fan Power Consumption">
+     
+    </div>
+    <div class="dual-right">
+      <img src="{% static 'images/fanabout2.png' %}" alt="BLDC Motor Technology">
+      
+    </div>
+  </div>
+</section>
+    
+
+<!-- Features logos section -->
+<section class="features-logos">
+    <h2 class="features-heading">Why ZEE WIND BLDC Fan is Top Ceiling Fan in Kerala</h2>
+  <div class="logo-grid">
+    <img src="{% static 'images/logo1.png' %}" alt="Energy Efficient">
+    <img src="{% static 'images/logo2.png' %}" alt="RF Remote">
+    <img src="{% static 'images/logo3.png' %}" alt="24 Months Warranty">
+
+    <img src="{% static 'images/logo4.png' %}" alt="Long Lasting Coat">
+    <img src="{% static 'images/logo5.png' %}" alt="High Air Delivery">
+    <img src="{% static 'images/logo6.png' %}" alt="Save 65% Energy">
+
+    <img src="{% static 'images/logo7.png' %}" alt="BLDC Motor Efficiency">
+    <img src="{% static 'images/logo8.png' %}" alt="Air Delivery 235 CMM">
+    <img src="{% static 'images/logo9.png' %}" alt="No Regulator Needed">
+
+    <img src="{% static 'images/logo10.png' %}" alt="Speed RPM">
+    <img src="{% static 'images/logo11.png' %}" alt="Power Consumption">
+
+  </div>
+</section>
+
+{% endblock %}

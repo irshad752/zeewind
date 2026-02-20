@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/warranty.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="status-container">
+    <div class="status-card check-card">
+        <h2>🔍 Check Warranty Status</h2>
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="serial_number" placeholder="Enter Serial Number" required>
+            <button type="submit">Check Status</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

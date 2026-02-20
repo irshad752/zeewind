@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/product.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="product-page-body">
+<h1> OUR PRODUCTS  </h1>
+<section class="product-section">
+  <h2>BLDC SMART FANS</h2>
+
+<div class="filter-bar">
+  <form method="get">
+    <label for="sort">Sort by:</label>
+    <select id="sort" name="sort" onchange="this.form.submit()">
+      <option value="">-- Select --</option>
+      <option value="low" {% if sort_option == 'low' %}selected{% endif %}>Price: Low to High</option>
+      <option value="high" {% if sort_option == 'high' %}selected{% endif %}>Price: High to Low</option>
+      <option value="available" {% if sort_option == 'available' %}selected{% endif %}>Availability</option>
+    </select>
+  </form>
+</div>
+
+
+
+
+<div class="product-row">
+    {% for p in ceiling %}
+    <div class="product-card">
+        <img class="product-img" id="img{{ p.id }}" src="{{ p.colors.first.image.url }}" width="200">
+
+        <h3>{{ p.name }}</h3>
+        <p class="price"> ₹ {{ p.price }}</p>
+
+        <p class="description">{{ p.description }}</p>
+        <p class="warranty">2-Year Warranty Included</p>
+        <p class="reviews">★★★★☆ (120+ reviews)</p>
+
+
+     <!-- Quick View Button -->
+       <button onclick="openQuickView('{{ p.id }}')">Qucik View</button> 
+
+        <!-- Quick View Modal --> 
+         <div id="quickView{{ p.id }}" class="quick-view-modal">
+         <div class="quick-view-content"> 
+            <span class="close" onclick="closeQuickView('{{ p.id }}')">&times;</span> 
+            <img src="{{ p.colors.first.image.url }}" width="200">
+             <h3>{{ p.name }}</h3> 
+             <p class="price">${{ p.price }}</p> 
+             <p class="description">{{ p.description }}</p> 
+             <p class="warranty">2-Year Warranty Included</p> 
+             <p class="reviews">★★★★☆ (120+ reviews)</p> 
+            </div> 
+        </div>
+
+
+<div class="badges">
+    <img src="{% static 'images/energy-badge.jpg' %}" alt="Energy Efficient">
+    <img src="{% static 'images/iso-badge.avif' %}" alt="ISO Certified">
+    <img src="{% static 'images/warranty.png' %}" alt="Warranty">
+</div>
+
+        
+        <fieldset class="color-options">
+        <legend>Choose Color:</legend>
+        {% for c in p.colors.all %}
+             <label>
+                <input type="radio" name="color{{ p.id }}"
+                 onclick="changeImage('{{ p.id }}', '{{ c.image.url }}')"
+                 {% if forloop.first %} checked {% endif %}>
+                {{ c.color_name }}
+            </label>
+          
+        {% endfor %}
+        </fieldset>
+        <br><br>
+
+        {% if p.available %}
+            <p class="status" style="color: green;">Available</p>
+            <a id="enquiry{{ p.id }}"
+                href="{% url 'enquiry' p.id p.colors.first.color_name %}">
+                <button>Contact Us</button></a><br><br>
+            
+               
+        {% else %}
+            <p class="status" style="color: red; cursor:not-allowed;">Temporarily Unavailable</p>
+            <button disabled style="background:red; color: white; font-weight:bold; cursor:not-allowed;">Out of Stock</button>
+        {% endif %}
+        
+    </div>
+    {% endfor %}
+</div>
+</section>
+</div> 
+
+<footer class="trust-footer">
+  <div class="trust-item">🔒 Secure Payments</div>
+  <div class="trust-item">🚚 Fast Shipping</div>
+  <div class="trust-item">🛠️ 2-Year Warranty</div>
+  <div class="trust-item">📞 24/7 Support</div>
+</footer>
+
+
+{% block extra_js %}
+<script>
+function openQuickView(id) {
+  document.getElementById("quickView" + id).style.display = "flex";
+  document.body.classList.add("modal-open"); 
+}
+
+function closeQuickView(id) {
+  document.getElementById("quickView" + id).style.display = "none";
+  document.body.classList.remove("modal-open");
+}
+
+</script>
+{% endblock %}
+
+
+{% endblock %}
+
+
+

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/warranty.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="status-container">
+    <div class="status-card error-card">
+        <div class="status-icon">❌</div>
+        <h2>Verification Failed</h2>
+        <p class="error-message">
+            We could not verify your registration details.<br>
+            Please contact our customer care team:<br>
+            📞 +91-9037 607 044 &nbsp; | &nbsp; 📞 +91-8289 912 249<br>
+            ✉ support: zeewindekd@gmail.com
+        </p>
+    </div>
+</div>
+{% endblock %}

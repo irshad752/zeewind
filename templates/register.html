@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/warranty.css' %}">
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="register-page">
+<div class="warranty-container">
+<h2>Warranty Registration</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Submit</button>
+</form>
+</div>
+</div>
+{% endblock %}

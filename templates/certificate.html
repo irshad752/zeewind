@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_css %} 
+<link rel="stylesheet" href="{% static 'css/warranty.css' %}">
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+
+{% endblock %}
+
+{% block content %}
+<div class="page-wrapper">
+    <div class="certificate-wrapper">
+        
+        <!-- Certificate background image -->
+        <img src="{% static 'images/warranty certificate.jpg' %}" 
+             alt="Warranty Certificate"  class="certificate-bg">
+ 
+        <!-- Overlay dynamic details -->
+        <div class="certificate-overlay">
+            <!-- Customer name in cursive -->
+            <div class="customer-name">{{ registration.name }}</div>
+
+            <!-- Product details block inside blank space -->
+            <div class="product-details">
+                <p><strong>
+                   Product :   {{ registration.product_name }}&nbsp;&nbsp;&nbsp;
+                    Color : {{ registration.product_color }}&nbsp;&nbsp;&nbsp;
+                    Purchase : {{ registration.date_of_purchase }}→ {{ end_date }}<br>
+                    <span class="serial"><strong>SN: {{ registration.serial_number }} </span>
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+     <div class="download-btn-wrapper">
+            <button id="download-btn">⬇ Download Certificate</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/html2pdf.bundle.min.js' %}"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("download-btn");
+    if (btn) {
+        btn.addEventListener("click", function () {
+            const element = document.querySelector(".certificate-wrapper");
+            let elementWidth = element.offsetWidth;
+            let elementHeight = element.offsetHeight;   
+            
+            // ✅ Toggle: set true for responsive PDF, false for fixed desktop PDF
+                        const responsivePDF = window.innerWidth <= 480; 
+                        // Auto: mobile gets responsive, desktop gets fixed
+            
+                        if (!responsivePDF) {
+                            // Fixed desktop mode: always 850px wide
+                            elementWidth = 850;
+                            elementHeight = 1100;
+                        }
+
+
+
+            const opt = {
+                margin: 0,
+                filename: 'Warranty_Certificate.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'px', format: [elementWidth, elementHeight], orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save();
+        });
+    } else {
+        console.error("Download button not found!");
+    }
+});
+</script>
+{% endblock %}
+
+
+

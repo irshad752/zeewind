@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>          
+    <meta charset="UTF-8">
+    <meta name="description" 
+          content="Top quality ceiling fan, bldc fan , Best BLDC ceiling fans with remote,  at best price durable and energy efficient fans in kerala">
+    <meta name="keywords"
+            content="fan company,ceiling fan, bldc fan , bldc ceiling fan , home fans, living room fan, bedroom fan, kitchen fan,  bathroom fan, office fan, best fan in kerala">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Best Fan Company in Kerala{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+     
+    {% block extra_css %}{% endblock %}
+    
+
+   
+    
+</head>
+    <body>
+        <header>
+            <nav>
+
+                <div class="logo">
+                    <a href="/"> <img src="{% static 'images/zee-wind-logo.png' %}"  alt="ZEE WIND Logo"> </a> </div>
+                    <span class="nav-text">ZEE WIND</span>
+                    <!-- Hamburger icon (only visible on mobile) -->
+                                <button class="menu-toggle" aria-label="Toggle Menu">
+                                    <i class="fas fa-bars"></i>
+                                </button>
+                <ul>
+
+                    <li><a href="{% url 'home'%}">Home</a></li>
+                    <li><a href="{% url 'products'%}">Products</a></li>
+                    <li><a href="{% url 'about'%}">about</a></li>
+                    <li><a href="{% url 'contact'%}">Contact</a></li>
+                    <li><a href="{% url 'register_warranty'%}">Warranty Registration </a></li>
+                    <li><a href="{% url 'check_warranty'%}">Warranty Status </a></li>
+                    <li><a href="{% url 'admin:index' %}">Admin</a></li>
+
+                    
+                </ul>
+            </nav>
+        </header>
+
+<hr> <div class="container">
+        {% block content %}
+        {% endblock %}
+        </div>
+
+<hr>
+        <footer>
+            <p>&copy; 2019 ZEEWIND ENTERPRISES COOLING SOLUTION . ALL RIGHTS RESERVED.</p>
+        </footer>
+        
+        <script>
+            function changeImage(productId, imageUrl, colorName) {
+                document.getElementById('img' + productId).src = imageUrl;
+
+                let enquiryLink = document.getElementById('enquiry' + productId);
+                if (enquiryLink) {
+                    enquiryLink.href = "/enquiry/" + productId + "/" + colorName + "/";
+                }
+            }  
+
+
+        // Hamburger toggle
+                document.addEventListener("DOMContentLoaded", function() {
+                    const toggle = document.querySelector(".menu-toggle");
+                    const navMenu = document.querySelector("nav ul");
+                    const navLinks = document.querySelectorAll("nav ul li a");
+                    const backdrop = document.querySelector(".menu-backdrop");
+                    const toggleIcon = toggle.querySelector("i");
+                    
+        
+                    toggle.addEventListener("click", () => {
+                        navMenu.classList.toggle("show");
+                        backdrop.classList.toggle("show");
+                        toggle.classList.toggle("active");
+
+                        // Switch icon between bars and X
+                        if (toggle.classList.contains("active")) {
+                            toggleIcon.classList.remove("fa-bars");
+                            toggleIcon.classList.add("fa-times");
+                        } else {
+                              toggleIcon.classList.remove("fa-times");
+                              toggleIcon.classList.add("fa-bars");
+                        }
+                    });
+
+                    // auto close menu on link click (for mobile)
+                    navLinks.forEach(link => {
+                      link.addEventListener("click", () => {
+                        navMenu.classList.remove("show");
+                        toggle.classList.remove("active");
+                        toggleIcon.classList.remove("fa-times");
+                        toggleIcon.classList.add("fa-bars");
+                    });
+              });
+
+          // Close when backdrop clicked
+          backdrop.addEventListener("click", () => {
+            navMenu.classList.remove("show");
+            backdrop.classList.remove("show");
+            toggle.classList.remove("active");
+            toggleIcon.classList.remove("fa-times");
+            toggleIcon.classList.add("fa-bars");
+          });
+
+});
+
+            
+        </script>
+        
+        
+        {% block extra_js %}
+         {% endblock %}
+  
+
+    </body>
+</html>

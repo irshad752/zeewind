@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="about-page">
+
+  <!-- Hero Banner -->
+  <section class="about-banner">
+    <h1>About ZEE WIND</h1>
+    <p>Delivering comfort, style, and energy efficiency across Kerala.</p>
+  </section>
+
+  <!-- Company Story -->
+  <section class="about-section">
+    <h2>Who We Are</h2>
+    <p>
+      At <strong>ZEE WIND Cooling Solutions</strong>, we specialize in ceiling fans, pedestal fans, wall fans, 
+      table fans, and exhaust fans. Our mission is to bring durable, energy-efficient cooling to every home 
+      and office in Kerala.
+    </p>
+  </section>
+
+  <!-- Special Highlight -->
+  <section class="highlight-offer">
+    <h2>Our Special Promise</h2>
+    <p>
+      <strong>Free Fitting Service!</strong>  
+      When you buy a fan from ZEE WIND, you only pay for the product.  
+      Installation is completely free of cost—because we believe comfort should come without extra charges.
+    </p>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="about-section">
+    <h2>Why Choose ZEE WIND?</h2>
+    <ul>
+      <li>✔ Energy-efficient fans designed for Kerala’s climate</li>
+      <li>✔ Durable products with modern designs</li>
+      <li>✔ Free installation service</li>
+      <li>✔ Trusted by homes and offices across Kerala</li>
+    </ul>
+  </section>
+
+  <!-- Vision -->
+  <section class="about-section">
+    <h2>Our Vision</h2>
+    <p>
+      To be Kerala’s most trusted fan company, combining innovation, affordability, and customer-first service.
+    </p>
+  </section>
+
+</div>
+{% endblock %}
