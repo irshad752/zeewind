@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-5d2&3i00zngtvu_-b0pg8)7zoxbabag2o+#rkj^uz+g(ev4t*c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]  # Allow all hosts for development
+ALLOWED_HOSTS = ["https://zeewind.onrender.com"]  # Allow all hosts for development
 
 # Application definition
 
@@ -78,14 +78,12 @@ WSGI_APPLICATION = 'fancompany.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+import dj_database_url
 
-
+DATABASES = { 'default': dj_database_url.config(
+     default='postgres://localhost'
+       )
+ }
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
