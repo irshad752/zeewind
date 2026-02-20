@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Add WhiteNoise middleware
 ]
 
 ROOT_URLCONF = 'fancompany.urls'
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'fancompany.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR.parent, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -80,11 +81,12 @@ WSGI_APPLICATION = 'fancompany.wsgi.application'
 
 import dj_database_url
 
-DATABASES = { 
-    'default': dj_database_url.config(
-     default='postgres://localhost'
-       )
- }
+DATABASES = {
+     "default": dj_database_url.config( 
+         # Render will use DATABASE_URL automatically
+         default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}" # safe local fallback
+    ) 
+}
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
@@ -122,7 +124,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [ 
-    os.path.join(BASE_DIR, "static")
+    os.path.join(BASE_DIR.parent, "static")
 ] # points to faan_website/static 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles") # where static files will be collected
 
@@ -132,4 +134,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles") # where static files will be
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = os.path.join(BASE_DIR.parent, 'media')
