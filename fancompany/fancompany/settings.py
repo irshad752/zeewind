@@ -123,8 +123,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [ BASE_DIR.parent.parent / "static"] # points to faan_website/static 
-STATIC_ROOT = BASE_DIR.parent.parent / "staticfiles" # where static files will be collected
+STATICFILES_DIRS = [ BASE_DIR.parent / "static"] # points to faan_website/static 
+STATIC_ROOT = BASE_DIR.parent / "staticfiles" # where static files will be collected
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
@@ -135,4 +135,4 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR.parent.parent / 'media'
+MEDIA_ROOT = BASE_DIR.parent / 'media'
