@@ -123,7 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [ BASE_DIR / "static"] # points to faan_website/static 
+STATICFILES_DIRS = [ BASE_DIR.parent / "static"] # points to faan_website/static 
 STATIC_ROOT = BASE_DIR / "staticfiles" # where static files will be collected
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
