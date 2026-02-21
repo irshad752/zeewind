@@ -54,7 +54,7 @@ MIDDLEWARE = [
     
 ]
 
-ROOT_URLCONF = 'fancompany.urls'
+ROOT_URLCONF = 'fancompany.fancompany.urls'
 
 
 
@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'fancompany.wsgi.application'
+WSGI_APPLICATION = 'fancompany.fancompany.wsgi.application'
 
 
 # Database
