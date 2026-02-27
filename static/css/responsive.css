@@ -200,6 +200,60 @@
 @media (max-width: 480px) {
   .logo-grid {
     grid-template-columns: 1fr;
+    display: grid;
+    gap: 15px;
+  }
+/* logo grid  animation */
+  .logo-grid img {
+    opacity: 0;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+  }
+
+  /* Odd images slide in from left */
+  .logo-grid img:nth-child(odd) {
+    animation-name: slideInLeft;
+  }
+
+  /* Even images slide in from right */
+  .logo-grid img:nth-child(even) {
+    animation-name: slideInRight;
+  }
+
+  /* Staggered delays */
+  .logo-grid img:nth-child(1) { animation-delay: 0s; }
+  .logo-grid img:nth-child(2) { animation-delay: 0.2s; }
+  .logo-grid img:nth-child(3) { animation-delay: 0.4s; }
+  .logo-grid img:nth-child(4) { animation-delay: 0.6s; }
+  .logo-grid img:nth-child(5) { animation-delay: 0.8s; }
+  .logo-grid img:nth-child(6) { animation-delay: 1s; }
+  .logo-grid img:nth-child(7) { animation-delay: 1.2s; }
+  .logo-grid img:nth-child(8) { animation-delay: 1.4s; }
+  .logo-grid img:nth-child(9) { animation-delay: 1.6s; }
+  .logo-grid img:nth-child(10) { animation-delay: 1.8s; }
+  .logo-grid img:nth-child(11) { animation-delay: 2s; }
+}
+
+/* Keyframes */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 /* Dual Image Section */
