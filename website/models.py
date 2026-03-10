@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from datetime import timedelta
+from cloudinary_storage.storage import MediaCloudinaryStorage
 # Create your models here.
 class Product(models.Model):
 
@@ -14,7 +15,7 @@ class Product(models.Model):
     price = models.IntegerField()
     description = models.TextField()
     available = models.BooleanField(default=True)
-    image = models.ImageField(upload_to='products/')
+    image = models.ImageField(storage=MediaCloudinaryStorage(), upload_to='products/')
 
     def __str__(self):
         return self.name
@@ -22,7 +23,7 @@ class Product(models.Model):
 class ProductColorImage(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='colors')
     color_name = models.CharField(max_length=50)
-    image = models.ImageField(upload_to='product_colors/')
+    image = models.ImageField(storage=MediaCloudinaryStorage(), upload_to='product_colors/')
 
     def __str__(self):
         return f"{self.product.name} - {self.color_name}"
