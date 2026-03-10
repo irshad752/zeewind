@@ -206,7 +206,7 @@
 /* logo grid  animation */
   .logo-grid img {
     opacity: 0;
-    animation-duration: 0.8s;
+    animation-duration: 3s;
     animation-fill-mode: forwards;
   }
 
