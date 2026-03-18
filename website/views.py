@@ -44,7 +44,7 @@ Phone: {phone}
 Product: {product.name}
 Color: {color}
  """
-        whatsapp_number = '918289912249'
+        whatsapp_number = '917902907410'
         url = f"https://wa.me/{whatsapp_number}?text={quote(message)}"
 
         return redirect(url)
