@@ -29,6 +29,8 @@ class ProductColorImage(models.Model):
         return f"{self.product.name} - {self.color_name}"
     
 
+    
+
 class WarrantyRegistration(models.Model):
         PRODUCT_CHOICES = [
             ('Maavel','Maavel'),

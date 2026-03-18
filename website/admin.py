@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Product, ProductColorImage ,WarrantyRegistration ,WarrantyApproval
 
+
 # Register your models here.
 class ProductColorImageInline(admin.TabularInline):
     model = ProductColorImage
