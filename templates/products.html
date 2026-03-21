@@ -34,12 +34,7 @@
         <p class="price"> ₹ {{ p.price }}</p>
 
         <p class="description">{{ p.description }}</p>
-        <p><strong>Features:</strong></p>
-        <ul>
-            {% for feature in p.features.all %}
-                <li>{{feature.get_mark_display}} {{ feature.text }}</li>
-            {% endfor %}
-        </ul>
+  
         <p class="warranty">2-Year Warranty Included</p>
         <p class="reviews">★★★★☆ (120+ reviews)</p>
 

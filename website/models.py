@@ -33,12 +33,12 @@ class ProductColorImage(models.Model):
 
 class WarrantyRegistration(models.Model):
         PRODUCT_CHOICES = [
-            ('Maavel','Maavel'),
-            ('Atmos Pro','Atmos Pro'),
-            ('Spin Air','Spin Air'),
-            ('Atmos Silent','Atmos Silent'),
-            ('Max Air','Max Air'),
-            ('Dazzale','Dazzale'),
+            ('Nano Premium 1200mm ','Nano Premium 1200mm '),
+            ('Nano Premium 900mm','Nano Premium 900mm'),
+            ('Breeza 1200mm','Breeza 1200mm'),
+            ('Dume 1200mm','Dume 1200mm'),
+            ('Dume Led','Dume Led'),
+           
         ]
         COLOR_CHOICES = [
             ('White','White'),
