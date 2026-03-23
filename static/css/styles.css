@@ -114,8 +114,8 @@ h2::after {
     animation: underlineGrow 1s ease-out;
 }
 h2:hover {
-    color: #a523c2
-; /* orange highlight on hover */
+    color: #c00404
+;
 }
 
 /* Animations */
